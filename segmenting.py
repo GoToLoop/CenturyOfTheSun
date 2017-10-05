@@ -59,7 +59,7 @@ def run(f):
     segments = segmentize(processed)
     print('Segments detected:', segments[1])
 
-    segs = [find_segment(segments[0], s) for s in range(1, segments[1])]
+    segs = [ find_segment(segments[0], s) for s in range(1, segments[1]) ]
     segs.sort(key=lambda s: -s[0])
 
     # Get the directory name (if a full path is given)
