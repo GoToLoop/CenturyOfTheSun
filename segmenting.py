@@ -56,8 +56,9 @@ def run(f):
     print('Processing:', f)
     image = open_image(f)
     processed = adaptive_threshold(image)
+
     segments = segmentize(processed)
-    print('Segments detected:', segments[1])
+    print('Segments detected:', segments[1] - 1)
 
     segs = [ find_segment(segments[0], s) for s in range(1, segments[1]) ]
     segs.sort(key=lambda s: -s[0])
