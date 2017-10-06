@@ -12,7 +12,7 @@ from skimage.morphology import watershed
 
 def open_image(name):
     #filename = os.path.join(os.getcwd(), name)
-    filename = os.path.isdir(name) and name or os.path.join(os.getcwd(), name)
+    filename = os.path.isfile(name) and name or os.path.join(os.getcwd(), name)
     return io.imread(filename, as_grey=True)
 
 
