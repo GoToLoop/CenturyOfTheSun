@@ -60,7 +60,8 @@ def run(f):
     segments = segmentize(processed)
     print('Segments detected:', segments[1] - 1)
 
-    segs = [ find_segment(segments[0], s) for s in range(1, segments[1]) ]
+    s0, s1 = segments
+    segs = [ find_segment(s0, s) for s in range(1, s1) ]
     segs.sort(key=lambda s: -s[0])
 
     # Get the directory name (if a full path is given)
@@ -75,7 +76,7 @@ def run(f):
     os.path.isfile(segments_folder) and os.remove(segments_folder)
     os.path.isdir(segments_folder)  or  os.mkdir(segments_folder)
 
-    # Save the segments to the "segments" directory
+    # Save the segments to the "_segments" directory
     r3 = list(range(3))
     i = 0
     sep = '-'
