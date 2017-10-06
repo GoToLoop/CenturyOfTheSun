@@ -71,7 +71,7 @@ def run(f):
     # Get the file name
     filenm = os.path.basename(f)[:-4]
 
-    # If it doesn't already exist, create a new dir "segments" to save the PNGs
+    # If it doesn't already exist, create a new dir "_segments" to save the PNGs
     segments_folder = os.path.join(folder, filenm + "_segments")
     os.path.isfile(segments_folder) and os.remove(segments_folder)
     os.path.isdir(segments_folder)  or  os.mkdir(segments_folder)
